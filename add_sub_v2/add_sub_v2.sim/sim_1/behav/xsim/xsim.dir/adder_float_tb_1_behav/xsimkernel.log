@@ -2,3 +2,6 @@ Running: xsim.dir/adder_float_tb_1_behav/xsimk.exe -simmode gui -wdb adder_float
 Design successfully loaded
 Design Loading Memory Usage: 9676 KB (Peak: 9676 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 10404 KB (Peak: 10404 KB)
+Simulation CPU Usage: 30 ms
