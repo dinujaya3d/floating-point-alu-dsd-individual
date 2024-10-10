@@ -1,17 +1,17 @@
 Vivado Simulator v2024.1.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: E:/Vivado/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot adder_float_tb_1_behav xil_defaultlib.adder_float_tb_1 xil_defaultlib.glbl -log elaborate.log 
+Running: E:/Vivado/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_fp_multiplier_32_behav xil_defaultlib.tb_fp_multiplier_32 xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "E:/UoM/Sem05/DSD/Project/Project-repo/alu_individual/floating-point-alu-dsd-individual/add_sub_v2/add_sub_v2.srcs/sources_1/new/adder_float.v" Line 1. Module adder_float doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/UoM/Sem05/DSD/Project/Project-repo/alu_individual/floating-point-alu-dsd-individual/add_sub_v2/add_sub_v2.srcs/sources_1/new/adder_float.v" Line 1. Module adder_float doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/UoM/Sem05/DSD/Project/Project-repo/alu_individual/floating-point-alu-dsd-individual/add_sub_v2/add_sub_v2.srcs/sources_1/new/multiplier.v" Line 1. Module fp_multiplier_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/UoM/Sem05/DSD/Project/Project-repo/alu_individual/floating-point-alu-dsd-individual/add_sub_v2/add_sub_v2.srcs/sources_1/new/multiplier.v" Line 1. Module fp_multiplier_32 doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.adder_float
-Compiling module xil_defaultlib.adder_float_tb_1
+Compiling module xil_defaultlib.fp_multiplier_32
+Compiling module xil_defaultlib.tb_fp_multiplier_32
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot adder_float_tb_1_behav
+Built simulation snapshot tb_fp_multiplier_32_behav
