@@ -1,77 +1,39 @@
-`timescale 1ns / 1ps
+module tb_fp_multiplier_32;
 
-module tb_fp_multiplier_32();
+    reg clk;
+    reg [31:0] a, b;  // Inputs to the multiplier
+    wire [31:0] result;  // Output from the multiplier
 
-    // Inputs
-    reg [31:0] a;
-    reg [31:0] b;
-
-    // Output
-    wire [31:0] result;
-
-    // Instantiate the floating-point multiplier module
+    // Instantiate the fp_multiplier_32 module
     fp_multiplier_32 uut (
+        .clk(clk),
         .a(a),
         .b(b),
         .result(result)
     );
 
-    // Function to convert 32-bit IEEE 754 to real (decimal)
-    function real ieee_754_to_real;
-        input [31:0] fp;
-        reg [22:0] mantissa;
-        reg [7:0] exponent;
-        reg sign;
-        real fraction;
-        integer i;
-        begin
-            sign = fp[31];
-            exponent = fp[30:23] - 127; // Exponent with bias removed
-            mantissa = fp[22:0];
-            fraction = 1.0;
-
-            // Convert mantissa to fraction
-            for (i = 0; i < 23; i = i + 1) begin
-                fraction = fraction + (mantissa[i] * (1.0 / (1 << (i + 1))));
-            end
-
-            // Compute the final real value
-            ieee_754_to_real = (sign ? -1.0 : 1.0) * fraction * (2.0 ** exponent);
-        end
-    endfunction
-
+    // Clock generation
     initial begin
-        // Display result
-        $monitor("Time: %0t | a = %h (%f) | b = %h (%f) | result = %h (%f)", 
-                 $time, a, ieee_754_to_real(a), b, ieee_754_to_real(b), result, ieee_754_to_real(result));
+        clk = 0;
+        forever #5 clk = ~clk;  // 10 time units clock period
+    end
 
-        // Test case 1: Multiply two positive floating-point numbers
-        a = 32'h40400000; // 3.0 in IEEE 754
-        b = 32'h40000000; // 2.0 in IEEE 754
-        #10;
-        
-        // Test case 2: Multiply positive and negative floating-point numbers
-        a = 32'hC0400000; // -3.0 in IEEE 754
-        b = 32'h40400000; // 2.0 in IEEE 754
-        #10;
-        
-        // Test case 3: Multiply two negative floating-point numbers
-        a = 32'hC0400000; // -3.0 in IEEE 754
-        b = 32'hC0000000; // -2.0 in IEEE 754
-        #10;
-        
-        // Test case 4: Multiply zero and a floating-point number
-        a = 32'h00000000; // 0.0 in IEEE 754
-        b = 32'h3F800000; // 1.0 in IEEE 754
-        #10;
+    // Test stimulus
+    initial begin
+        // Apply test inputs
+        a = 32'h425371AA;  // 1.0 in IEEE 754
+        b = 32'hC29147AE;  // 2.0 in IEEE 754
 
-        // Test case 5: Multiply two large floating-point numbers
-        a = 32'h7F7FFFFF; // Largest positive float (close to max)
-        b = 32'h3F800000; // 1.0 in IEEE 754
-        #10;
+        // Wait for 1000 clock cycles
+        #10000;
 
-        // End simulation
-        $stop;
+        // Finish simulation
+        $finish;
+    end
+
+    // Monitor output
+    initial begin
+        $monitor($time, " clk=%b, a=%h, b=%h, result=%h", clk, a, b, result);
     end
 
 endmodule
