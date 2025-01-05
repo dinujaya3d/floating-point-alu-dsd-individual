@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_substractor_float_behav/xsimk.exe -simmode gui -wdb tb_substractor_float_behav.wdb -simrunnum 0 -socket 58167
+Design successfully loaded
+Design Loading Memory Usage: 8164 KB (Peak: 8164 KB)
+Design Loading CPU Usage: 15 ms

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_substractor_float_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_substractor_float" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="85.142 ns"></ZoomEndTime>
+      <Cursor1Time time="29.583 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="178"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/tb_substractor_float/uut/a" type="array">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/b" type="array">
+      <obj_property name="ElementShortName">b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/result" type="array">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/sign_a" type="logic">
+      <obj_property name="ElementShortName">sign_a</obj_property>
+      <obj_property name="ObjectShortName">sign_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/sign_b" type="logic">
+      <obj_property name="ElementShortName">sign_b</obj_property>
+      <obj_property name="ObjectShortName">sign_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/sign_res" type="logic">
+      <obj_property name="ElementShortName">sign_res</obj_property>
+      <obj_property name="ObjectShortName">sign_res</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/exp_a" type="array">
+      <obj_property name="ElementShortName">exp_a[7:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_a[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/exp_b" type="array">
+      <obj_property name="ElementShortName">exp_b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_b[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/exp_res" type="array">
+      <obj_property name="ElementShortName">exp_res[7:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_res[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/mantissa_a" type="array">
+      <obj_property name="ElementShortName">mantissa_a[23:0]</obj_property>
+      <obj_property name="ObjectShortName">mantissa_a[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/mantissa_b" type="array">
+      <obj_property name="ElementShortName">mantissa_b[23:0]</obj_property>
+      <obj_property name="ObjectShortName">mantissa_b[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/aligned_mantissa_a" type="array">
+      <obj_property name="ElementShortName">aligned_mantissa_a[24:0]</obj_property>
+      <obj_property name="ObjectShortName">aligned_mantissa_a[24:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/aligned_mantissa_b" type="array">
+      <obj_property name="ElementShortName">aligned_mantissa_b[24:0]</obj_property>
+      <obj_property name="ObjectShortName">aligned_mantissa_b[24:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/sub_res" type="array">
+      <obj_property name="ElementShortName">sub_res[24:0]</obj_property>
+      <obj_property name="ObjectShortName">sub_res[24:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/exp_diff" type="array">
+      <obj_property name="ElementShortName">exp_diff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_diff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/leading_zero_count" type="array">
+      <obj_property name="ElementShortName">leading_zero_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">leading_zero_count[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/normalized_mantissa" type="array">
+      <obj_property name="ElementShortName">normalized_mantissa[23:0]</obj_property>
+      <obj_property name="ObjectShortName">normalized_mantissa[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_substractor_float/uut/normalized_exp" type="array">
+      <obj_property name="ElementShortName">normalized_exp[7:0]</obj_property>
+      <obj_property name="ObjectShortName">normalized_exp[7:0]</obj_property>
+   </wvobject>
+</wave_config>

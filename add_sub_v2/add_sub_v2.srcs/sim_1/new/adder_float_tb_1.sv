@@ -26,8 +26,8 @@ module adder_float_tb;
         $monitor("Time: %0t | a: %h | b: %h | result: %h", $time, a, b, result);
 
         // Initialize inputs
-         a = 32'h7F800000; // Infinity in IEEE 754
-        b = 32'hFF800000; // -Infinity in IEEE 754
+         a = 32'h40533333; // Infinity in IEEE 754
+         b = 32'h404ccccd; // -Infinity in IEEE 754
         #10;
 
 

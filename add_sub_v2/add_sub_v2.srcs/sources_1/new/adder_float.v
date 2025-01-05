@@ -1,4 +1,4 @@
-module adder_float(
+module subtractor_float(
     input clk,              // Clock signal
     input [31:0] a,         // 32-bit floating point input a
     input [31:0] b,         // 32-bit floating point input b
@@ -7,11 +7,11 @@ module adder_float(
 
     // Extract sign, exponent, and mantissa from inputs
     wire sign_a = a[31];
-    wire sign_b = b[31];
+    wire sign_b = ~b[31];          // Flip the sign of b for subtraction
     wire [7:0] exp_a = a[30:23];
     wire [7:0] exp_b = b[30:23];
-    wire [23:0] mant_a = {1'b1, a[22:0]}; // Implicit 1
-    wire [23:0] mant_b = {1'b1, b[22:0]}; // Implicit 1
+    wire [23:0] mant_a = {1'b1, a[22:0]}; // Implicit leading 1
+    wire [23:0] mant_b = {1'b1, b[22:0]}; // Implicit leading 1
 
     // Intermediate registers
     reg [7:0] exp_common;
@@ -38,7 +38,7 @@ module adder_float(
         if (sign_a == sign_b) begin
             mant_sum <= mant_a_shifted + mant_b_shifted;
             sign_result <= sign_a;
-        end else if (mant_a_shifted > mant_b_shifted) begin
+        end else if (mant_a_shifted >= mant_b_shifted) begin
             mant_sum <= mant_a_shifted - mant_b_shifted;
             sign_result <= sign_a;
         end else begin
@@ -53,6 +53,12 @@ module adder_float(
         end else begin
             mant_result <= mant_sum[23:0];
             exp_result <= exp_common;
+
+            // Further normalization if needed
+            while (mant_result[23] == 0 && exp_result > 0) begin
+                mant_result <= mant_result << 1;
+                exp_result <= exp_result - 1;
+            end
         end
 
         // Step 4: Handle zero result condition
